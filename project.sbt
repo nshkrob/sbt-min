@@ -11,8 +11,8 @@ libraryDependencies += "com.twitter" %% "scrooge-core" % "3.17.0"
 libraryDependencies += "org.apache.thrift" % "libthrift" % "0.8.0"
 
 
-com.twitter.scrooge.ScroogeSBT.scroogeBuildOptions := Seq("--finagle")
-com.twitter.scrooge.ScroogeSBT.scroogeThriftSourceFolder := baseDirectory.value
+// This 'val' sets the inConfig settings.
+// inConfig(Compile)(genThriftSettings)
 com.twitter.scrooge.ScroogeSBT.newSettings
 
 inConfig(Compile)(com.twitter.scrooge.ScroogeSBT.scroogeThriftSources := Seq(baseDirectory.value / "test.thrift"))
