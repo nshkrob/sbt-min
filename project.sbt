@@ -1,9 +1,13 @@
 name := "asdf"
 
-scalaVersion := "2.10.4"
+scalaVersion := "2.11.7"
 
 resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
 
-// Example imports.
-libraryDependencies += "com.twitter" %% "finagle-thrift" % "6.24.0"
-libraryDependencies += "com.twitter" %% "scrooge-core" % "3.17.0"
+// Scala imports: usually double percent signs.
+libraryDependencies += "com.twitter" %% "util-logging" % "6.28.0"
+libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.4" % "test"
+// Java imports: single %
+libraryDependencies += "commons-io" % "commons-io" % "2.4"
+
+scalaSource in Test := baseDirectory.value / "test"
